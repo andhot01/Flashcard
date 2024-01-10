@@ -38,9 +38,6 @@ public class FlashController {
     private Label label7;
 
     @FXML
-    private Button newSetButton;
-
-    @FXML
     private Rectangle pi0;
 
     @FXML
@@ -71,11 +68,6 @@ public class FlashController {
 
     @FXML
     void importSet(MouseEvent event) {
-
-    }
-
-    @FXML
-    void makeNewSet(MouseEvent event) {
 
     }
 

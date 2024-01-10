@@ -34,18 +34,7 @@
             <Font name="Ink Free" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="newSetButton" layoutX="242.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#makeNewSet" text="New set">
-         <font>
-            <Font name="Gadugi" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button fx:id="importButton" layoutX="311.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#importSet" text="Import">
+      <Button fx:id="importButton" layoutX="272.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#importSet" text="Import">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
