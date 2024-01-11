@@ -8,58 +8,15 @@ import javafx.scene.shape.Rectangle;
 
 public class FlashController {
     @FXML
-    private Button importButton;
+    private Button importButton, introButton;
 
     @FXML
-    private Button introButton;
+    private Label label0, label1, label2, label3, label4, label5, label6, label7;
 
     @FXML
-    private Label label0;
+    private Rectangle pi0, pi1, pi2, pi3, pi4, pi5, pi6, pi7;
 
-    @FXML
-    private Label label1;
-
-    @FXML
-    private Label label2;
-
-    @FXML
-    private Label label3;
-
-    @FXML
-    private Label label4;
-
-    @FXML
-    private Label label5;
-
-    @FXML
-    private Label label6;
-
-    @FXML
-    private Label label7;
-
-    @FXML
-    private Rectangle pi0;
-
-    @FXML
-    private Rectangle pi1;
-
-    @FXML
-    private Rectangle pi2;
-
-    @FXML
-    private Rectangle pi3;
-
-    @FXML
-    private Rectangle pi4;
-
-    @FXML
-    private Rectangle pi5;
-
-    @FXML
-    private Rectangle pi6;
-
-    @FXML
-    private Rectangle pi7;
+    private IntroWindow iw = new IntroWindow();
 
     @FXML
     void editSetName(MouseEvent event) {
@@ -73,7 +30,7 @@ public class FlashController {
 
     @FXML
     void openIntro(MouseEvent event) {
-
+        iw.openWindow();
     }
 
     @FXML
