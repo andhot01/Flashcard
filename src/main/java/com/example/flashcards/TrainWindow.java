@@ -1,5 +1,5 @@
-/*This class loads another fxml file for a new window where user can make changes to a set
-*/
+/* This class loads another fxml file for a new window where the user can train a set
+ */
 
 package com.example.flashcards;
 
@@ -11,17 +11,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EditWindow {
-    public void makeChange(Rectangle clickedRectangle) {
+public class TrainWindow {
+    public void train(Rectangle clickedRectangle) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("editSets.fxml"));
-            Stage edit = new Stage();
-            edit.setTitle("Edit set");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("train.fxml"));
+            Stage train = new Stage();
+            train.setTitle("Edit set");
             AnchorPane editLayout = loader.load();
             Scene scene = new Scene(editLayout);
-            edit.setScene(scene);
-
-            //EditSetsController controller = loader.getController(); - may not be needed -
+            train.setScene(scene);
 
             if (clickedRectangle.getId().equals("pi0")){
                 //display arraylist 0
@@ -41,7 +39,7 @@ public class EditWindow {
                 //arraylist 7
             }
 
-            edit.show();
+            train.show();
 
         } catch (IOException e){
             System.out.println("Error");

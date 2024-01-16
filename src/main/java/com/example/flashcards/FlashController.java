@@ -21,6 +21,7 @@ public class FlashController {
 
     private IntroWindow iw = new IntroWindow();
     private EditWindow ew = new EditWindow();
+    private TrainWindow tw = new TrainWindow();
 
     @FXML
     void editSetName(MouseEvent event) {
@@ -56,6 +57,12 @@ public class FlashController {
             Rectangle clickedRectangle = (Rectangle) event.getSource();//selected rectangle for each set
 
             ew.makeChange(clickedRectangle); //class for editWindow to save space
+        }
+
+        if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
+            Rectangle clickedREctangle = (Rectangle) event.getSource();
+
+            tw.train(clickedREctangle);
         }
     }
 }
