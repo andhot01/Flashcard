@@ -3,6 +3,8 @@ package com.example.flashcards;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
@@ -20,6 +22,18 @@ public class FlashController {
 
     @FXML
     void editSetName(MouseEvent event) {
+        Label clickedLabel = (Label) event.getSource();
+
+        TextField txt = new TextField(clickedLabel.getText());
+        clickedLabel.setText(" ");
+        clickedLabel.setGraphic(txt);
+
+        txt.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.ENTER) {
+                clickedLabel.setText(txt.getText());
+                clickedLabel.setGraphic(null);
+            }
+        });
 
     }
 
