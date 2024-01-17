@@ -20,6 +20,7 @@ public class TrainWindow {
             AnchorPane editLayout = loader.load();
             Scene scene = new Scene(editLayout);
             train.setScene(scene);
+            train.setResizable(false);
 
             if (clickedRectangle.getId().equals("pi0")){
                 //display arraylist 0

@@ -26,18 +26,21 @@ public class FlashController {
     @FXML
     void editSetName(MouseEvent event) {
         Label clickedLabel = (Label) event.getSource();//get selected label to avoid repeating same code 8 times
+
+        if (clickedLabel != label0) { //Turorial should be untouchable by user
 //Turns label into textField for user input, empties label so previous text doesn't show
-        TextField txt = new TextField(clickedLabel.getText());
-        clickedLabel.setText(" ");
-        clickedLabel.setGraphic(txt);
+            TextField txt = new TextField(clickedLabel.getText());
+            clickedLabel.setText(" ");
+            clickedLabel.setGraphic(txt);
 
 //when enter is pressed label returns with new text
-        txt.setOnKeyPressed(keyEvent -> {
-            if (keyEvent.getCode() == KeyCode.ENTER) {
-                clickedLabel.setText(txt.getText());
-                clickedLabel.setGraphic(null);
-            }
-        });
+            txt.setOnKeyPressed(keyEvent -> {
+                if (keyEvent.getCode() == KeyCode.ENTER) {
+                    clickedLabel.setText(txt.getText());
+                    clickedLabel.setGraphic(null);
+                }
+            });
+        }
 //make method for db to keep changes
     }
 
@@ -55,8 +58,9 @@ public class FlashController {
     void openSet(MouseEvent event) {
         if (event.getButton() == MouseButton.SECONDARY) {
             Rectangle clickedRectangle = (Rectangle) event.getSource();//selected rectangle for each set
-
-            ew.makeChange(clickedRectangle); //class for editWindow to save space
+            if (clickedRectangle != pi0) {//user should not be able to edit Tutorial
+                ew.makeChange(clickedRectangle); //class for editWindow to save space
+            }
         }
 
         if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){

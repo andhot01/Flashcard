@@ -20,6 +20,7 @@ public class EditWindow {
             AnchorPane editLayout = loader.load();
             Scene scene = new Scene(editLayout);
             edit.setScene(scene);
+            edit.setResizable(false);
 
             //EditSetsController controller = loader.getController(); - may not be needed -
 

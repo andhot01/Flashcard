@@ -14,6 +14,7 @@ public class FlashApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Welcome to FlashCards");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
