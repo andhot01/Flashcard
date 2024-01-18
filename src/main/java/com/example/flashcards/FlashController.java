@@ -1,13 +1,19 @@
 package com.example.flashcards;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class FlashController {
     @FXML
@@ -20,8 +26,6 @@ public class FlashController {
     private Rectangle pi0, pi1, pi2, pi3, pi4, pi5, pi6, pi7;
 
     private IntroWindow iw = new IntroWindow();
-    private EditWindow ew = new EditWindow();
-    private TrainWindow tw = new TrainWindow();
 
     @FXML
     void editSetName(MouseEvent event) {
@@ -59,14 +63,40 @@ public class FlashController {
         if (event.getButton() == MouseButton.SECONDARY) {
             Rectangle clickedRectangle = (Rectangle) event.getSource();//selected rectangle for each set
             if (clickedRectangle != pi0) {//user should not be able to edit Tutorial
-                ew.makeChange(clickedRectangle); //class for editWindow to save space
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("editSets.fxml"));
+                    Stage edit = new Stage();
+                    edit.setTitle("Edit set");
+                    AnchorPane editLayout = loader.load();
+                    Scene scene = new Scene(editLayout);
+                    edit.setScene(scene);
+                    edit.setResizable(false);
+
+                    edit.show();
+
+                } catch (IOException e){
+                    System.out.println("Error");
+                }
             }
         }
 
         if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
             Rectangle clickedREctangle = (Rectangle) event.getSource();
 
-            tw.train(clickedREctangle);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("train.fxml"));
+                Stage train = new Stage();
+                train.setTitle("Train set");
+                AnchorPane editLayout = loader.load();
+                Scene scene = new Scene(editLayout);
+                train.setScene(scene);
+                train.setResizable(false);
+
+                train.show();
+
+            } catch (IOException e){
+                System.out.println("Error");
+            }
         }
     }
 }

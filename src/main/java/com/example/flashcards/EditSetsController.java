@@ -11,6 +11,7 @@ public class EditSetsController {
 
     @FXML
     private Button deleteCardButton, newCardButton, searchCardButton;
+    private Logic logic = new Logic();
 
     @FXML
     void deleteCard(MouseEvent event) {
@@ -24,7 +25,7 @@ public class EditSetsController {
 
     @FXML
     void searchCard(MouseEvent event) {
-
+        logic.loadTrivia();
     }
 
     @FXML
