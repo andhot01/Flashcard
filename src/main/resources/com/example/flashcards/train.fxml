@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="519.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flashcards.TrainController">
    <children>
       <ImageView fitHeight="519.0" fitWidth="634.0">
@@ -22,7 +21,7 @@
             <Font name="Gabriola" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="additionalLabel" layoutX="284.0" layoutY="84.0" opacity="0.0" text="Additional">
+      <Label fx:id="additionalLabel" layoutX="315.0" layoutY="85.0" opacity="0.0" text="-">
          <font>
             <Font name="Gabriola" size="20.0" />
          </font>
@@ -50,7 +49,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="showAnswerButton" layoutX="275.0" layoutY="303.0" mnemonicParsing="false" onKeyPressed="#showAnswer" text="Show answer">
+      <Button fx:id="showAnswerButton" layoutX="275.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#showAnswer" text="Show answer">
          <effect>
             <InnerShadow />
          </effect>
@@ -66,7 +65,7 @@
             <Font name="Gabriola" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="explanationLabel" layoutX="279.0" layoutY="377.0" opacity="0.0" text="Explanation">
+      <Label fx:id="explanationLabel" layoutX="313.0" layoutY="379.0" opacity="0.0" text="-">
          <font>
             <Font name="Gabriola" size="20.0" />
          </font>
@@ -75,9 +74,6 @@
          <font>
             <Font name="Gadugi" size="12.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
          <effect>
             <InnerShadow />
          </effect>
@@ -86,9 +82,6 @@
          <effect>
             <InnerShadow />
          </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
          <font>
             <Font name="Gadugi" size="12.0" />
          </font>
@@ -97,17 +90,11 @@
          <font>
             <Font name="Gadugi" size="12.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
          <effect>
             <InnerShadow />
          </effect>
       </Button>
       <Button fx:id="rightButton" layoutX="432.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#right" opacity="0.0" text="Right">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
          <effect>
             <InnerShadow />
          </effect>
@@ -126,5 +113,41 @@
             <InnerShadow />
          </effect>
       </Button>
+      <Label layoutX="494.0" layoutY="20.0" text="Cards in set:">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="45.0" text="Cards not shown:">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="69.0" text="Right answers:">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="92.0" text="Almost right:">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="115.0" text="Somewhat right:">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="138.0" text="Wrong:">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="countTotal" layoutX="613.0" layoutY="23.0" text="0" />
+      <Label fx:id="countNew" layoutX="613.0" layoutY="48.0" text="0" />
+      <Label fx:id="countRight" layoutX="613.0" layoutY="72.0" text="0" />
+      <Label fx:id="countAlmost" layoutX="613.0" layoutY="95.0" text="0" />
+      <Label fx:id="countSome" layoutX="613.0" layoutY="118.0" text="0" />
+      <Label fx:id="countWrong" layoutX="613.0" layoutY="141.0" text="0" />
    </children>
 </AnchorPane>

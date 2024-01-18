@@ -13,6 +13,9 @@ public class TrainController {
     private Label additionalLabel, answerLabel, explanationLabel, questionLabel;
 
     @FXML
+    private Label countAlmost, countNew, countRight, countSome, countTotal, countWrong;
+
+    @FXML
     private Button almostRightButton, someRightButton, wrongButton, rightButton;
 
     @FXML
@@ -42,13 +45,19 @@ public class TrainController {
     }
 
     @FXML
-    void showAnswer(KeyEvent event) {
-
+    void showAnswer(MouseEvent event) {
+        answerLabel.setOpacity(1);
+        explanationLabel.setOpacity(1);
+        wrongButton.setOpacity(1);
+        someRightButton.setOpacity(1);
+        almostRightButton.setOpacity(1);
+        rightButton.setOpacity(1);
     }
 
     @FXML
     void showHint(MouseEvent event) {
-
+        additionalLabel.setOpacity(1);
+        imageView.setOpacity(1);
     }
 
     @FXML
