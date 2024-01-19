@@ -13,28 +13,7 @@ public class Logic {
         List<Cards> cardsTr = dao.loadTrivia();
         return cardsTr;
     }
-
-    public void loadSpanish(){
-        dao.loadSpanish();
-    }
-
-    public void loadAnki(){
-        dao.loadAnki();
-    }
-
-    public void loadPost4(){
-        dao.loadPost4();
-    }
-
-    public void loadPost5(){
-        dao.loadPost5();
-    }
-
-    public void loadPost6(){
-        dao.loadPost6();
-    }
-
-    public void loadPost7(){
-        dao.loadPost7();
-    }
+/*gentages for resterende 6 metoder fra dao
+På samme måde laves metoder tilsvarende til dao for redigering og sletning af kort
+ */
 }

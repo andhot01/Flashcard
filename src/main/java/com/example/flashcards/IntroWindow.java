@@ -1,5 +1,6 @@
-/* This class is here for the sole purpose of saving space in the controller, where the openIntro() method
-calls it */
+/* This class is here for the sole purpose of saving space in the controller, where the
+openIntro() method calls it
+*/
 
 package com.example.flashcards;
 
