@@ -6,12 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class FlashController {
@@ -35,6 +37,18 @@ public class FlashController {
             TextField txt = new TextField(clickedLabel.getText());
             clickedLabel.setText(" ");
             clickedLabel.setGraphic(txt);
+
+            int charLim = 10;
+            TextFormatter<String> limit = new TextFormatter<>(change -> {
+                if (change.isDeleted() || change.isContentChange()) {
+                    if (change.getControlNewText().length()>charLim || change.getControlNewText().isEmpty()) {
+                        return null;
+                    }
+                }
+                return change;
+            });
+
+            txt.setTextFormatter(limit);//doesn't allow user input to be empty or over 10 char long
 
 //when enter is pressed label returns with new text
             txt.setOnKeyPressed(keyEvent -> {
@@ -75,7 +89,7 @@ public class FlashController {
 
                 } catch (IOException e){
                     System.out.println("Error");
-                }
+                }//opens new window by loading another fxml file
             }
         }
 
