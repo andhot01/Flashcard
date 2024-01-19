@@ -64,8 +64,6 @@ public class IntroWindow {
             event.consume();
         });
 
-        VBox box = new VBox();
-        intro.getDialogPane().setContent(box);
         intro.showAndWait();
     }
 }
